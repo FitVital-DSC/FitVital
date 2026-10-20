@@ -1,7 +1,7 @@
-import { SchedulingStats } from '../../../common/enum/scheduling-stats.enum.js';
+import { SchedulingStatus } from '../../../common/enum/scheduling-status.enum.js';
 
 export class ConfirmReservationResponseDto {
   schedulingId: string;
-  stats: SchedulingStats;
+  status: SchedulingStatus;
   message: string;
 }

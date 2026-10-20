@@ -1,34 +1,34 @@
-import { SchedulingStats } from '../../../common/enum/scheduling-stats.enum.js';
-import { MonthlyPaymentStats } from '../../../common/enum/monthlyPayment-stats.enum.js';
+import { SchedulingStatus } from '../../../common/enum/scheduling-status.enum.js';
+import { MonthlyPaymentStatus } from '../../../common/enum/monthlyPayment-status.enum.js';
 
 export class Scheduling {
-  private status: SchedulingStats;
+  private status: SchedulingStatus;
 
   constructor(
     public readonly schedulingId: string,
     public readonly clientId: string,
-    status: SchedulingStats,
+    status: SchedulingStatus,
     public readonly createdAt: Date,
     public updatedAt: Date,
   ) {
     this.status = status;
   }
 
-  getStatus(): SchedulingStats {
+  getStatus(): SchedulingStatus {
     return this.status;
   }
 
-  confirmar(mensalidadeStatus: MonthlyPaymentStats): void {
-    if (this.status === SchedulingStats.CONFIRMED) {
+  confirmar(mensalidadeStatus: MonthlyPaymentStatus): void {
+    if (this.status === SchedulingStatus.CONFIRMED) {
       // agendamento já confirmado
       return;
     }
 
-    if (mensalidadeStatus !== MonthlyPaymentStats.PAID) {
+    if (mensalidadeStatus !== MonthlyPaymentStatus.PAID) {
       // mensalidade não paga (inadimplente)
     }
 
-    this.status = SchedulingStats.CONFIRMED;
+    this.status = SchedulingStatus.CONFIRMED;
     this.updatedAt = new Date();
   }
 }
