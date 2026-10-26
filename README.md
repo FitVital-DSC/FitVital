@@ -6,7 +6,6 @@ O FitVital é um sistema de gestão para academias de pequeno e médio porte. O 
 ## Responsáveis
 - Mariana
 - Vitor
-*(Equipe: Eu Quero, Eu Posso)*
 
 ## Estágio Atual
 Fase de preparação do repositório e documentação arquitetural. A implementação do primeiro slice foi iniciada.
