@@ -3,14 +3,14 @@ import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { SchedulingModule } from './modules/scheduling/scheduling.module.js'; 
 
 @Module({
   imports: [
-    ConfigModule.forRoot(
-      {
-        isGlobal: true,
-        envFilePath: '.env',}
-    ),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: '.env',
+    }),
     TypeOrmModule.forRootAsync({
       useFactory: async (configService: ConfigService) => ({
         type: 'postgres',
@@ -23,7 +23,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
         synchronize: false,
       }),
       inject: [ConfigService],
-    })
+    }),
+    SchedulingModule, 
   ],
   controllers: [AppController],
   providers: [AppService],
