@@ -1,14 +1,7 @@
-import { CreateDateColumn, DeleteDateColumn, Entity, PrimaryGeneratedColumn } from "typeorm";
-import { Column } from "typeorm/browser";
-
-enum schedulingStatus {
-    PENDING = 'pending',
-    CONFIRMED = 'confirmed',
-    CANCELLED = 'cancelled',
-}
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { SchedulingStatus } from "../../../common/enum/scheduling-status.enum.js";
 
 @Entity({ name: 'scheduling', schema: 'scheduling' })
-
 export class SchedulingEntity {
     @PrimaryGeneratedColumn('uuid')
     schedulingId: string;
@@ -16,13 +9,12 @@ export class SchedulingEntity {
     @Column({ type: 'uuid' })
     clientId: string;
 
-    @Column({ type: 'enum', enum: schedulingStatus })
-    status: schedulingStatus;
+    @Column({ type: 'enum', enum: SchedulingStatus })
+    status: SchedulingStatus;
 
-    @CreateDateColumn({ type: 'timestamp with time zone', default: () => 'CURRENT_TIMESTAMP' })
+    @CreateDateColumn({ type: 'timestamp with time zone' })
     createdAt: Date;
 
-    @DeleteDateColumn({ type: 'timestamp with time zone', nullable: true })
-    updatedAt: Date | null;
+    @UpdateDateColumn({ type: 'timestamp with time zone' })
+    updatedAt: Date;
 }
-

@@ -45,7 +45,7 @@ describe('SchedulingService', () => {
         monthlyPaymentRepository = module.get(MONTHLYPAYMENT_REPOSITORY);
     });
 
-    it('deve lancar excecao quando o agendamento nao existir', async () => {
+    it('should throw an exception when the scheduling does not exist', async () => {
         schedulingRepository.findById.mockResolvedValueOnce(null);
 
         await expect(
@@ -53,7 +53,7 @@ describe('SchedulingService', () => {
         ).rejects.toThrow(SchedulingNotFoundException);
     });
 
-    it('deve lancar excecao quando a mensalidade nao existir', async () => {
+    it('should throw an exception when the monthly payment does not exist', async () => {
         schedulingRepository.findById.mockResolvedValueOnce({ id: 'scheduling-1' });
         monthlyPaymentRepository.findBySchedulingId.mockResolvedValueOnce(null);
 

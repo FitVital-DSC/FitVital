@@ -1,0 +1,7 @@
+@baseUrl = http://localhost:3000
+
+### Confirmar reserva com ID inválido 
+POST {{{{baseUrl}}/scheduling/confirm-reservation}} 
+
+### Conformar reserva com ID válido
+POST {{{{baseUrl}}/scheduling/}}
