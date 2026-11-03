@@ -6,11 +6,13 @@ import { MONTHLYPAYMENT_REPOSITORY } from '../finances/repositories/monthlypayme
 import { SchedulingEntity } from '../../infrastructure/persistence/scheduling/scheduling.orm-entity.js';
 import { TypeOrmSchedulingRepository } from '../../infrastructure/persistence/scheduling/typeorm-scheduling.repository.js';
 import { SchedulingMapper } from '../../infrastructure/persistence/scheduling/scheduling.orm-mapper.js'; 
+import { SchedulingController } from './controllers/scheduling.controller.js';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([SchedulingEntity]),
   ],
+  controllers: [SchedulingController],
   providers: [
     SchedulingService,
     SchedulingMapper, 
