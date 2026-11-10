@@ -2,7 +2,7 @@
 
 ## Execução
 
-- **Data:** 09/11/2026
+- **Data:** 10/11/2026
 - **Repositório:** [FitVital-DSC/FitVital](https://github.com/FitVital-DSC/FitVital)
 - **Branch padrão:** `main`
 - **Conta usada na CLI:** `marianaveigaa`
@@ -36,9 +36,7 @@ As oito Sub-Issues foram criadas como sub-issues nativas da Epic #21 e também c
 
 ### Configuração do Status
 
-O campo padrão protegido `Status` do GitHub Project não permite remover ou substituir suas opções pela GitHub CLI. Ele permanece com `Todo`, `In Progress` e `Done`.
-
-Para atender à metodologia, foi criado o campo customizado **Status Metodologia**, com exatamente:
+O campo padrão protegido `Status` foi configurado com exatamente:
 
 1. `Backlog`
 2. `Ready`
@@ -46,7 +44,7 @@ Para atender à metodologia, foi criado o campo customizado **Status Metodologia
 4. `In Review`
 5. `Done`
 
-A Epic #21 e SUB-01 foram posicionadas em `Ready`; SUB-02 a SUB-08 foram posicionadas em `Backlog` nesse campo metodológico. A equipe deve usar **Status Metodologia** como referência do board e não considerar o campo padrão `Status` como conforme à metodologia.
+A Epic #21 e SUB-01 foram posicionadas em `Ready`; SUB-02 a SUB-08 foram posicionadas em `Backlog`.
 
 ## Labels criadas ou atualizadas
 
