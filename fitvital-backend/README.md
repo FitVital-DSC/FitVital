@@ -57,6 +57,20 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
+## UC03 — Processar pagamento de mensalidade
+
+O Gateway de Pagamento pode informar o resultado de uma cobrança por meio de:
+
+```http
+POST /finances/monthly-payments/:monthlyPaymentId/payment
+Content-Type: application/json
+
+{ "status": "PAID" }
+```
+
+`PAID` altera a mensalidade para `PAID` e registra a data do pagamento. `FAILED`
+mantém a mensalidade no estado atual e retorna `200`.
+
 ## Deployment
 
 When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.

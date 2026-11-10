@@ -10,4 +10,10 @@ export class MonthlyPayment {
     public createdAt: Date,
     public updatedAt: Date,
   ) {}
+
+  processPayment(processedAt: Date = new Date()): void {
+    this.status = MonthlyPaymentStatus.PAID;
+    this.datePayment = processedAt;
+    this.updatedAt = processedAt;
+  }
 }
