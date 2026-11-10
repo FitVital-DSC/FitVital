@@ -18,7 +18,7 @@ Não utilizar `Todo`, `No Status` ou outros estados. A mudança para `Done` some
 |---|---|---|
 | Epic `[UC01] Solicitar Agendamento de Treino` | Ready | Escopo e critérios gerais documentados |
 | SUB-01 | Ready | Não depende de outra Sub-Issue |
-| SUB-02 | Ready | Depende apenas do refinamento do domínio; pode iniciar após SUB-01 |
+| SUB-02 | Backlog | Depende do refinamento do domínio; será movida para `Ready` após SUB-01 e confirmação dos contratos |
 | SUB-03 | Backlog | Aguarda SUB-01 e SUB-02 |
 | SUB-04 | Backlog | Aguarda contratos e serviço |
 | SUB-05 | Backlog | Aguarda contratos e serviço |
@@ -29,4 +29,3 @@ Não utilizar `Todo`, `No Status` ou outros estados. A mudança para `Done` some
 ## Definition of Ready proposta
 
 Uma Issue pode ir para `Ready` quando possuir objetivo, escopo, origem documental, critérios testáveis, dependências e responsável definidos. A equipe ainda deve confirmar os campos marcados como pendência no Blueprint.
-

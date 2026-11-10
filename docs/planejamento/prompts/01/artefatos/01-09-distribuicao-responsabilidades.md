@@ -1,6 +1,6 @@
 # Artefato 9 — Distribuição de responsabilidades
 
-Equipe informada: Mariana Veiga e Vitor Thomé. Como não foi indicada uma alocação individual, o responsável permanece `A definir` para evitar atribuição inventada.
+Equipe informada: Mariana Veiga e Vitor Thomé. Como não foi indicada uma alocação individual para cada atividade, o responsável permanece `A definir` para evitar atribuição inventada.
 
 | Item | Atividade | Responsável | Dependências | Estado | Comunicação |
 |---|---|---|---|---|---|
@@ -15,4 +15,3 @@ Equipe informada: Mariana Veiga e Vitor Thomé. Como não foi indicada uma aloca
 | SUB-08 | Documentação/governança | A definir | SUB-01–SUB-07 | Backlog | Revisão final pelos dois integrantes |
 
 Recomendação: designar um responsável primário e um revisor para cada Issue no GitHub antes de movê-la para `Ready`. Decisões sobre lock, limite do personal e correção RN03/RN04 devem ser registradas em comentário ou documentação revisada pela equipe.
-

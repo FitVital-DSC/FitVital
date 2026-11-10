@@ -1,17 +1,16 @@
 # Artefato 03 — Matriz de distribuição das Sub-Issues
 
-Estado real observado no relatório anterior: `Todo` no Project. Estado recomendado nesta etapa: `Backlog`, pois nenhuma revisão humana foi registrada e a DoR-06/07 não está atendida.
+A distribuição abaixo é proposta. As Issues reais estão abertas no repositório; a revisão humana e a atribuição formal ainda não foram concluídas.
 
-| ID | Título | Complexidade | Dependências | Responsável proposto | Revisor proposto | Estado real | Estado recomendado | Justificativa |
-|---|---|---|---|---|---|---|---|---|
-| SUB-01/#13 | Refinar domínio de agendamento | Alta | — | Mariana | Vitor | Todo | Backlog | Arquitetura e invariantes exigem experiência técnica; revisão independente |
-| SUB-02/#14 | Definir comandos, DTOs e portas | Média | SUB-01 | Vitor | Mariana | Todo | Backlog | Contratos são atividade adequada ao desenvolvimento de Vitor; Mariana valida arquitetura |
-| SUB-03/#15 | Implementar serviço de aplicação | Alta | SUB-01, SUB-02 | Mariana | Vitor | Todo | Backlog | Orquestra regras críticas e requer experiência em backend |
-| SUB-04/#16 | Planejar adaptador HTTP | Média | SUB-02, SUB-03 | Vitor | Mariana | Todo | Backlog | API fica com Vitor; Mariana revisa códigos e fronteiras |
-| SUB-05/#17 | Implementar persistência | Alta | SUB-02, SUB-03 | Mariana | Vitor | Todo | Backlog | Persistência e isolamento arquitetural alinhados à experiência de backend |
-| SUB-06/#18 | Proteger concorrência e capacidade | Alta | SUB-02, SUB-05 | Vitor | Mariana | Todo | Backlog | Vitor executa; Mariana revisa a decisão de lock e risco RN02 |
-| SUB-07/#19 | Validar automaticamente o slice | Alta | SUB-01 a SUB-06 | Mariana | Vitor | Todo | Backlog | Experiência informada em testes; revisão independente evita autoaprovação |
-| SUB-08/#20 | Consolidar documentação e rastreabilidade | Média | SUB-01 a SUB-07 | Vitor | Mariana | Todo | Backlog | Vitor consolida e Mariana verifica consistência final |
+| ID / Issue | Título | Complexidade | Dependências | Responsável proposto | Revisor proposto | Estado metodológico observado | Recomendação DoR |
+|---|---|---|---|---|---|---|---|
+| SUB-01 / #22 | Refinar modelo de acesso e ocupação | Alta | — | Mariana | Vitor | Ready | Backlog |
+| SUB-02 / #23 | Definir comando, DTOs e portas do check-in | Média | SUB-01 | Vitor | Mariana | Backlog | Backlog |
+| SUB-03 / #24 | Implementar serviço de aplicação do UC02 | Alta | SUB-01, SUB-02 | Mariana | Vitor | Backlog | Backlog |
+| SUB-04 / #25 | Implementar persistência da entrada e ocupação | Alta | SUB-02, SUB-03 | Vitor | Mariana | Backlog | Backlog |
+| SUB-05 / #26 | Planejar adapter da catraca | Média | SUB-02, SUB-03 | Mariana | Vitor | Backlog | Backlog |
+| SUB-06 / #27 | Proteger concorrência da capacidade | Alta | SUB-02, SUB-04 | Vitor | Mariana | Backlog | Backlog |
+| SUB-07 / #28 | Validar automaticamente o caso de uso | Alta | SUB-01 a SUB-06 | Mariana | Vitor | Backlog | Backlog |
+| SUB-08 / #29 | Consolidar documentação e rastreabilidade | Média | SUB-01 a SUB-07 | Vitor | Mariana | Backlog | Backlog |
 
-Os pares de responsável e revisor são distintos. A equipe deve confirmar a proposta e efetivar os assignees no GitHub.
-
+O campo `Status Metodologia` do Project foi configurado com os cinco estados exigidos. Embora Epic e SUB-01 tenham sido posicionadas em `Ready`, a DoR recomenda mantê-las em `Backlog` até a revisão humana.

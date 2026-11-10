@@ -1,70 +1,38 @@
 # Artefato 05 — Comentários técnicos para o GitHub
 
-Os textos abaixo são modelos para publicação nas Issues. A publicação e a aprovação devem ser feitas pelos revisores humanos.
+Os textos são modelos para publicação pelos revisores humanos. A pré-análise não substitui a revisão.
 
-## SUB-01/#13 — Revisor: Vitor
+## SUB-01 / #22 — Revisor: Vitor a confirmar
 
-```markdown
-### Revisão de planejamento — SUB-01
-Pré-análise: objetivo e escopo estão coerentes com o UC01. Antes de Ready, confirmar estados `Solicitado`, `Confirmado` e `Recusado`, validações de `Horario` e erros de domínio para entradas inválidas.
-**Condição para Ready:** Vitor registrar a revisão humana e Mariana confirmar os ajustes.
-```
+> Confirmar o modelo de autorização, os estados de acesso, o identificador do aluno e os erros de domínio. **Ready** somente após revisão humana e critérios verificáveis.
 
-## SUB-02/#14 — Revisor: Mariana
+## SUB-02 / #23 — Revisor: Mariana
 
-```markdown
-### Revisão de planejamento — SUB-02
-Confirmar assinaturas de FinanceiroPort, EspacoCapacidadePort, AgendaPersonalPort e AgendamentoRepository. Registrar decisão sobre limite do personal e lock; manter DTOs sem expor entidades.
-**Condição para Ready:** contratos aprovados por Mariana e pendências documentadas.
-```
+> Confirmar contratos de consulta financeira, capacidade, registro e catraca. Registrar como hipótese o que não estiver documentado e não permitir acesso direto ao Financeiro.
 
-## SUB-03/#15 — Revisor: Vitor
+## SUB-03 / #24 — Revisor: Vitor a confirmar
 
-```markdown
-### Revisão de planejamento — SUB-03
-Verificar ordem das consultas, interrupção por RN01, tratamento de RN02/RN03/RN04 e persistência somente após confirmação. Confirmar que o serviço não acessa tabelas de outros contextos.
-**Condição para Ready:** Vitor registrar aprovação humana.
-```
+> Validar a ordem: identificação, situação financeira, capacidade, registro/incremento e liberação. Bloqueios não podem registrar entrada nem incrementar ocupação.
 
-## SUB-04/#16 — Revisor: Mariana
+## SUB-04 / #25 — Revisor: Mariana
 
-```markdown
-### Revisão de planejamento — SUB-04
-Confirmar POST /api/v1/agendamentos, origem do aluno no JWT, validação 400 e mapeamentos 201/409/422. Confirmar contrato final do AgendamentoResponseDTO.
-**Condição para Ready:** contrato HTTP validado por Mariana.
-```
+> Confirmar campos persistidos, atomicidade entre registro e ocupação, mapper e propagação de falhas. A entidade de domínio deve permanecer independente da infraestrutura.
 
-## SUB-05/#17 — Revisor: Vitor
+## SUB-05 / #26 — Revisor: Vitor a confirmar
 
-```markdown
-### Revisão de planejamento — SUB-05
-Detalhar campos persistidos, mapper bidirecional, consulta de choque nominal e propagação de indisponibilidade do banco. Preservar domínio sem anotações ORM.
-**Condição para Ready:** Vitor confirmar o escopo de persistência.
-```
+> Definir o contrato do adapter da catraca, comandos de liberação/bloqueio e comportamento de falha. O adapter não deve decidir RN01 ou RN02.
 
-## SUB-06/#18 — Revisor: Mariana
+## SUB-06 / #27 — Revisor: Mariana
 
-```markdown
-### Revisão de planejamento — SUB-06
-Escolher e registrar lock otimista ou pessimista para RN02. Incluir cenário de duas solicitações concorrentes e resultado esperado, sem ultrapassar a capacidade.
-**Condição para Ready:** decisão de arquitetura aprovada por Mariana.
-```
+> Registrar a estratégia de concorrência para a última vaga e o resultado esperado de entradas simultâneas. Uma rejeição não pode alterar o contador.
 
-## SUB-07/#19 — Revisor: Vitor
+## SUB-07 / #28 — Revisor: Vitor a confirmar
 
-```markdown
-### Revisão de planejamento — SUB-07
-Organizar cenários de domínio, aplicação, HTTP e persistência, incluindo sucesso, RN01–RN04, 400, 409, 422 e falha de infraestrutura. A execução deve ocorrer após contratos confirmados.
-**Condição para Ready:** matriz de cenários aprovada por Vitor.
-```
+> Organizar testes de sucesso, inadimplência, lotação, concorrência e falhas por camada. Confirmar que bloqueios não incrementam ocupação.
 
-## SUB-08/#20 — Revisor: Mariana
+## SUB-08 / #29 — Revisor: Mariana
 
-```markdown
-### Revisão de planejamento — SUB-08
-Atualizar UC01, dicionário e decisões de lock/limite do personal. Corrigir a referência RN03/RN04 e preservar rastreabilidade com SUB-01 a SUB-07.
-**Condição para Ready:** documentação revisada por Mariana após os demais resultados.
-```
+> Consolidar contratos, decisões e pendências do UC02, preservando apenas as relações documentadas com UC01 e UC03. Aplicar novamente a DoR após as revisões.
 
 ## Template de conclusão humana
 
@@ -83,7 +51,6 @@ Atualizar UC01, dicionário e decisões de lock/limite do personal. Corrigir a r
 - [Ajustes, se houver]
 
 **Conclusão e Prontidão:**
-- [ ] Todos os critérios DoR-01 a DoR-07 atendidos; promover para Ready
+- [ ] DoR-01 a DoR-07 atendidos; promover para Ready
 - [ ] Manter em Backlog
 ```
-

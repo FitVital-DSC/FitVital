@@ -40,7 +40,7 @@
 
 **Objetivo:** coordenar o fluxo na ordem definida sem decidir regras no controller.
 
-**Descrição:** orquestrar adimplência, capacidade, disponibilidade do personal, choque nominal, criação/confirmacão, persistência e evento/log. Falhas devem interromper o fluxo com erros explícitos.
+**Descrição:** orquestrar adimplência, capacidade, disponibilidade do personal, choque nominal, criação/confirmação, persistência e evento/log. Falhas devem interromper o fluxo com erros explícitos.
 
 **Origem:** fluxo principal, alternativos e sequência arquitetural.
 
@@ -131,4 +131,3 @@
 - [ ] Documentos de governança refletem o escopo do slice.
 
 **Dependências:** SUB-01 a SUB-07. **Labels:** `documentation`, `governance`. **Responsável:** A definir. **Estado:** Backlog. **Evidências:** documentos revisados e matriz de rastreabilidade atualizada.
-
