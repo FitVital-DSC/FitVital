@@ -1,1 +1,7 @@
-GET http://localhost:3000/
+
+POST http://localhost:3000/schedulings/confirm
+Content-Type: application/json
+
+{
+  "schedulingId": "f8d7c36f-4fe5-4597-92ae-b8af9b6c6e9c"
+}

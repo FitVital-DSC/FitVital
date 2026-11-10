@@ -1,5 +1,7 @@
 import { SchedulingStatus } from '../../../common/enum/scheduling-status.enum.js';
 import { MonthlyPaymentStatus } from '../../../common/enum/monthlyPayment-status.enum.js';
+import { SchedulingAlreadyConfirmedException } from '../../../common/exceptions/schedulingAlreadyConfirmed.exception.js';
+import { StudentDefaulterException } from '../../../common/exceptions/studentDefaulter.exception.js';
 
 export class Scheduling {
   private status: SchedulingStatus;
@@ -18,14 +20,13 @@ export class Scheduling {
     return this.status;
   }
 
-  confirmar(mensalidadeStatus: MonthlyPaymentStatus): void {
+  confirm(monthlyPaymentStatus: MonthlyPaymentStatus): void {
     if (this.status === SchedulingStatus.CONFIRMED) {
-      // agendamento já confirmado
-      return;
+      throw new SchedulingAlreadyConfirmedException(this.schedulingId);
     }
 
-    if (mensalidadeStatus !== MonthlyPaymentStatus.PAID) {
-      // mensalidade não paga (inadimplente)
+    if (monthlyPaymentStatus !== MonthlyPaymentStatus.PAID) {
+      throw new StudentDefaulterException();
     }
 
     this.status = SchedulingStatus.CONFIRMED;
