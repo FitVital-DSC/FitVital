@@ -28,4 +28,4 @@ Uma ficha válida deve ser montada pelo Personal Trainer e ficar vinculada ao Al
 
 ## Referência e bloqueios
 
-Fonte: [M4-Blueprint do Primeiro Slice](../../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md), tabela de casos de uso e mapa de contextos. A implementação depende da confirmação das lacunas documentais.
+Fonte: [M4-Blueprint do Primeiro Slice](../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md), tabela de casos de uso e mapa de contextos. A implementação depende da confirmação das lacunas documentais.

@@ -6,7 +6,7 @@
 - **Caso de uso:** UC01 — Solicitar Agendamento de Treino
 - **Atores:** Aluno (principal); Personal Trainer e Gateway de Pagamento (secundários documentados)
 - **Primeiro slice:** UC01, no contexto de Gestão de Agendamentos
-- **Fonte:** [M4-Blueprint do Primeiro Slice](../../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md)
+- **Fonte:** [M4-Blueprint do Primeiro Slice](../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md)
 
 ## Objetivo e escopo
 

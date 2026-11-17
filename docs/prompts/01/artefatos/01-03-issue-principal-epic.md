@@ -12,7 +12,7 @@ Planejar a implementação do primeiro slice do FitVital para permitir que um al
 
 O slice pertence ao bounded context de Gestão de Agendamentos em um monólito modular. Abrange domínio, portas, serviço de aplicação, API HTTP, persistência, controle de concorrência, testes e documentação. Não abrange Gateway de Pagamento real, catraca física, notificações reais ou avaliação física.
 
-**Referência formal:** [M4-Blueprint do Primeiro Slice](../../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md), especialmente a especificação do UC01 e as etapas 15–23.
+**Referência formal:** [M4-Blueprint do Primeiro Slice](../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md), especialmente a especificação do UC01 e as etapas 15–23.
 
 ## Requisitos contemplados
 

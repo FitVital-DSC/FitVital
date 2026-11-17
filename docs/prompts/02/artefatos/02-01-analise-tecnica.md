@@ -6,7 +6,7 @@
 - **Caso de uso:** UC02 — Realizar Check-in (Controle de Acesso)
 - **Atores:** Aluno (principal) e Sistema de Controle de Acesso/Catraca (secundário)
 - **Contexto:** Gestão da Capacidade de Espaço
-- **Fonte:** [Blueprint do Primeiro Slice](../../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md)
+- **Fonte:** [Blueprint do Primeiro Slice](../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md)
 
 ## Objetivo e escopo
 

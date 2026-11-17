@@ -3,7 +3,7 @@
 - **Caso de uso:** UC05 — Registrar Avaliação Física
 - **Ator:** Personal Trainer
 - **Contexto:** Prescrição de Treino
-- **Fonte:** [M4 — Blueprint do Primeiro Slice](../../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md)
+- **Fonte:** [M4 — Blueprint do Primeiro Slice](../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md)
 
 ## Objetivo e escopo
 
