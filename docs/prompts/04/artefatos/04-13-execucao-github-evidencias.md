@@ -26,6 +26,9 @@ Resultado observado:
 
 - **Epic:** [#38 — UC04 Realizar Matrícula de Aluno](https://github.com/FitVital-DSC/FitVital/issues/38)
 - **Project:** [#5 — Planejamento - UC04 Realizar Matrícula de Aluno](https://github.com/orgs/FitVital-DSC/projects/5)
+- **Branch:** `test/uc04-matricula-red`
+- **Commit RED:** `f46b3d0` — `test: add UC04 enrollment RED slice`
+- **Draft Pull Request:** [#65 — test: iniciar RED do UC04 matrícula](https://github.com/FitVital-DSC/FitVital/pull/65)
 
 | ID | Issue | Título | Project |
 |---|---:|---|---|
