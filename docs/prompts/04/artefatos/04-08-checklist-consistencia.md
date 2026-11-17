@@ -6,9 +6,9 @@
 - [ ] Assignees e revisores distintos definidos.
 - [ ] Comentários técnicos publicados.
 - [ ] Dependências registradas.
-- [ ] DoR aplicada.
+- [x] DoR aplicada ao primeiro slice da SUB-02.
 - [ ] Project usa cinco estados.
-- [ ] Nenhuma Issue sem revisão foi movida para `Ready`.
+- [x] A SUB-02 foi movida para `Ready` após revisão e aprovação do contrato.
 - [ ] Rastreabilidade UC04 → Epic → Sub-Issues preservada.
 
-**Resultado esperado:** 0 Issues em `Ready` até a revisão humana e a confirmação dos contratos.
+**Resultado atual:** o primeiro slice da SUB-02 está `Ready`; as demais Sub-Issues continuam dependentes das camadas seguintes.

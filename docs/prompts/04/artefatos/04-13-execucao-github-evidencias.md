@@ -2,7 +2,25 @@
 
 ## Implementação
 
-O UC04 foi documentado para planejamento. Não foi realizada implementação de código nesta etapa.
+Foi criada a branch `test/uc04-matricula-red` para o primeiro slice do UC04. O teste unitário está em `fitvital-backend/src/modules/enrollment/services/enrollment.service.spec.ts` e cobre dados válidos produzindo matrícula ativa com a primeira mensalidade.
+
+O esqueleto de `EnrollmentService` preserva o contrato aprovado, mas lança erro explícito de não implementado. Isso permite executar o teste e comprovar RED funcional sem implementar GREEN.
+
+## Evidência RED
+
+Comando:
+
+```powershell
+cd C:\FitVital\fitvital-backend
+npm test -- --run src/modules/enrollment/services/enrollment.service.spec.ts
+```
+
+Resultado observado:
+
+- Test Files: `1 failed`;
+- Tests: `1 failed`;
+- Falha: `EnrollmentService.enrollStudent is not implemented`;
+- O aviso sobre `vite-tsconfig-paths` não causou a falha.
 
 ## GitHub
 
@@ -19,7 +37,7 @@ O UC04 foi documentado para planejamento. Não foi realizada implementação de 
 | SUB-06 | [#44](https://github.com/FitVital-DSC/FitVital/issues/44) | Validar automaticamente | Project #5 |
 | SUB-07 | [#45](https://github.com/FitVital-DSC/FitVital/issues/45) | Consolidar documentação | Project #5 |
 
-As Issues foram criadas como filhas da Epic, receberam comentários técnicos e dependências bloqueadoras. O campo `Status` do Project foi configurado com `Backlog`, `Ready`, `In Progress`, `In Review` e `Done`, e os oito itens foram movidos para `Backlog` por ainda não atenderem integralmente à DoR.
+As Issues foram criadas como filhas da Epic e receberam comentários técnicos e dependências bloqueadoras. A SUB-02 foi movida para `Ready` após a aprovação do contrato; as demais permanecem condicionadas às camadas seguintes.
 
 ## Evidências esperadas
 

@@ -10,4 +10,4 @@
 | Falha da cobrança reverte cadastro | SUB-03, SUB-04, SUB-06 | Nenhum Aluno órfão permanece | Teste de rollback |
 | Contratos não documentados | SUB-02, SUB-07 | Pendências explicitadas | Revisão humana |
 
-Campos, endpoint, duplicidade e estratégia exata de transação ainda são decisões pendentes.
+O endpoint HTTP e a persistência real permanecem fora do primeiro RED. Duplicidade e rollback serão cobertos nas etapas de serviço e persistência.
