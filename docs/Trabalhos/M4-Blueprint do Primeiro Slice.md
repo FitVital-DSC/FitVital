@@ -45,7 +45,7 @@ Não reproduza integralmente documentos anteriores.
 | ID | Caso de Uso | Ator principal | Objetivo | Resultado observável | Situação |
 |----|-------------|----------------|----------|----------------------|----------|
 | UC01 | Solicitar Agendamento de Treino | Aluno | Reservar horário com o personal/espaço | Ticket de agendamento confirmado | Novo |
-| UC02 | Realizar Check-in (Acesso)	| Aluno / Catraca |	Entrar na academia para treinar | Catraca liberada e contagem de ocupação incrementada | Novo
+| UC02 | Realizar Check-in (Acesso)	| Aluno / Catraca |	Entrar na academia para treinar | Catraca liberada e contagem de ocupação incrementada | Novo |
 | UC03 | Processar Pagamento de Mensalidade | Gateway Pagamento | Quitar a fatura do aluno | Mensalidade alterada para o estado "Paga" | Novo |
 | UC04 | Realizar Matrícula de Aluno | Recepcionista | Inserir o aluno no sistema | Aluno "Ativo" e 1ª mensalidade gerada | Novo |
 | UC05 | Registrar Avaliação Física | Personal Trainer | Salvar métricas de evolução do aluno | Histórico físico atualizado | Novo |
