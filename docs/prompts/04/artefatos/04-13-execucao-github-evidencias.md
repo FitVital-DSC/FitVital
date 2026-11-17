@@ -29,6 +29,7 @@ Resultado observado:
 - **Branch:** `test/uc04-matricula-red`
 - **Commit RED:** `f46b3d0` — `test: add UC04 enrollment RED slice`
 - **Draft Pull Request:** [#65 — test: iniciar RED do UC04 matrícula](https://github.com/FitVital-DSC/FitVital/pull/65)
+- **Status da SUB-06 (#44):** `In Progress` no Project #5
 
 | ID | Issue | Título | Project |
 |---|---:|---|---|
