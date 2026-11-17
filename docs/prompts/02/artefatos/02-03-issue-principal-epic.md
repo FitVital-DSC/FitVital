@@ -12,7 +12,7 @@ Planejar a implementação do check-in do FitVital para que o acesso seja libera
 
 O caso de uso pertence ao contexto de Gestão da Capacidade de Espaço. Abrange domínio, serviço de aplicação, contratos, persistência, ocupação, adapter da catraca e testes futuros. A integração física real, o protocolo do dispositivo e o processo de saída permanecem dependências ou dúvidas documentais.
 
-**Referência formal:** [Blueprint do Primeiro Slice](../../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md), seção 6, UC02, e seções 7–9.
+**Referência formal:** [Blueprint do Primeiro Slice](../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md), seção 6, UC02, e seções 7–9.
 
 ## Requisitos contemplados
 

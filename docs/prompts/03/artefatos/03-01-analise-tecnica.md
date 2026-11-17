@@ -6,7 +6,7 @@
 - **Caso de uso:** UC03 — Processar Pagamento de Mensalidade
 - **Ator principal:** Gateway de Pagamento
 - **Contexto:** Gestão Financeira
-- **Fonte:** [M4 — Blueprint do Primeiro Slice](../../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md)
+- **Fonte:** [M4 — Blueprint do Primeiro Slice](../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md)
 
 ## Objetivo e escopo
 

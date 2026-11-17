@@ -6,7 +6,7 @@
 - **Caso de uso:** UC04 — Realizar Matrícula de Aluno
 - **Ator principal:** Recepcionista
 - **Contexto:** Gestão Financeira, com criação do Aluno
-- **Fonte:** [M4 — Blueprint do Primeiro Slice](../../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md)
+- **Fonte:** [M4 — Blueprint do Primeiro Slice](../../../Trabalhos/M4-Blueprint%20do%20Primeiro%20Slice.md)
 
 ## Objetivo e escopo
 
