@@ -14,8 +14,8 @@
 | Suite E2E validada | Pendente por configuracao PostgreSQL |
 | Assercoes preservadas | Confirmado |
 | Refatoracao pesada evitada | Confirmado |
-| Commit registrado | Pendente |
-| Branch publicada | Pendente |
+| Commit registrado | Confirmado: e1b2be3 |
+| Branch publicada | Confirmado |
 | Draft PR criado ou atualizado | Pendente |
 | GitHub Project atualizado | Pendente |
 

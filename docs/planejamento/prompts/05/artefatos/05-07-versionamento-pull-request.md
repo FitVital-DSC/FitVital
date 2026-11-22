@@ -7,11 +7,13 @@
 
 ## Commits
 
-- O commit sera atomico e fara constar apenas o teste, o codigo minimo e os artefatos da etapa.
+- Commit registrado: `e1b2be3 fix: make monthly payment processing idempotent`
+- O commit contem o teste, o codigo minimo e os artefatos da etapa.
 - Nenhum merge sera realizado nesta fase.
 
 ## Pull Request
 
-- A branch precisa ser publicada com upstream.
+- Branch publicada com upstream em `origin/test/uc03-idempotencia-red`.
+- URL para criar o PR: https://github.com/FitVital-DSC/FitVital/pull/new/test/uc03-idempotencia-red
 - O PR sera Draft ou a descricao sera atualizada quando houver um PR existente.
 - O destino nao sera mesclado automaticamente.
