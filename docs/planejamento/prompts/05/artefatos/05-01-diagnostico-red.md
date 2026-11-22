@@ -92,8 +92,8 @@ O estado atual ja contem o comportamento necessario no servico e na entidade; po
 - Branch limpa antes da restauracao de dependencias
 - Teste direcionado aprovado apos restaurar dependencias
 - Resultado RED novo registrado nesta sessao
-- Commit RED ainda nao registrado
-- Draft PR ainda nao registrado
+- Commit GREEN registrado nesta sessao
+- Branch publicada; PR ainda nao criado
 - Nao foi recuperado um RED anterior do Material 04
 
 ## Autorizacao para prosseguir

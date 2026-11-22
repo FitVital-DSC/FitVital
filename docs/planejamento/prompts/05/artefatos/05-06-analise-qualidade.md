@@ -20,6 +20,8 @@ Os testes E2E nao chegaram a executar seus cenarios. Essa falha e ambiental e di
 
 ## Oportunidades para REFACTOR
 
-- Encapsular a idempotencia tambem na entidade `MonthlyPayment.processPayment`, caso isso faca parte do contrato de dominio.
-- Centralizar a responsabilidade de decidir persistencia em uma unica camada.
-- Configurar um banco PostgreSQL isolado para os testes E2E.
+- Nao foi identificada uma refatoracao pertinente nesta implementacao.
+- A guarda de idempotencia no servico e pequena, legivel e diretamente relacionada ao contrato testado.
+- O metodo continua com uma unica responsabilidade e nao apresenta duplicacao ou complexidade desnecessaria.
+- Encapsular a idempotencia na entidade seria uma alteracao estrutural ampla sem beneficio comprovado neste escopo e deve permanecer como evolucao futura, caso a equipe adote essa responsabilidade no dominio.
+- Configurar um banco PostgreSQL isolado continua necessaria para habilitar a regressao E2E.
