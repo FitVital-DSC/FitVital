@@ -8,7 +8,7 @@
 - **Sub-Issue avaliada:** [#47 — SUB-01: Refinar domínio de avaliação e histórico](https://github.com/FitVital-DSC/FitVital/issues/47)
 - **Labels registradas:** `feature`, `domain`, `uc05-avaliacao-fisica`
 - **Estado real observado:** `open`
-- **Responsável registrado:** `marianaveigaa`
+- **Responsável registrado:** `marianaveigaa`, `VitorThome15`
 
 ## Evidências analisadas
 
@@ -20,6 +20,7 @@
 - A API do GitHub não registra itens bloqueadores para a Issue #47.
 - A Issue #47 possui dois comentários, mas o conteúdo da revisão não foi apresentado nesta evidência.
 - Métricas, unidades, autorização, endpoint e regras de validação permanecem fora da SUB-01 e devem ser tratados nas etapas de contratos.
+- `VitorThome15` declarou assumir responsabilidade pela parte avaliada e concedeu a autorização de início.
 
 ## Matriz DoR
 
@@ -29,23 +30,29 @@
 | DoR-02 | Escopo delimitado | **Atende** | O escopo limita-se ao domínio e não inventa métricas; contratos, API e persistência ficam para outras Sub-Issues. |
 | DoR-03 | Critérios de aceite verificáveis | **Atende** | O aceite exige modelo aprovado, domínio sem ORM e preservação do histórico. |
 | DoR-04 | Dependências identificadas | **Atende** | A Issue declara nenhuma dependência e a API não registra itens bloqueadores. |
-| DoR-05 | Informações técnicas disponíveis | **Pendente de ajuste** | O contexto e os conceitos estão definidos, mas as invariantes, o vínculo com Aluno e o modelo mínimo ainda precisam de aprovação explícita. |
-| DoR-06 | Responsável definido | **Atende** | `marianaveigaa` está atribuída à Issue #47. |
-| DoR-07 | Revisão de planejamento concluída | **Pendente de comprovação** | Há dois comentários registrados, mas seus conteúdos não foram apresentados; não é possível confirmar aprovação apenas pelo contador. |
+| DoR-05 | Informações técnicas disponíveis | **Atende para a fase atual** | Os conceitos essenciais estão definidos; vínculos, invariantes e modelo mínimo podem ser refinados dentro do escopo autorizado. |
+| DoR-06 | Responsável definido | **Atende** | `marianaveigaa` está atribuída à Issue #47 e `VitorThome15` assumiu formalmente a responsabilidade nesta autorização. |
+| DoR-07 | Revisão de planejamento concluída | **Atende** | A revisão foi concluída por `VitorThome15`, que concedeu a aprovação explicitamente nesta etapa. |
 
 ## Pendências para autorização
 
-1. Aprovar explicitamente as invariantes e o vínculo entre avaliação, histórico e Aluno.
+1. Refinar as invariantes e o vínculo entre avaliação, histórico e Aluno.
 2. Confirmar que métricas e unidades serão tratadas na SUB-02, sem bloquear indevidamente a modelagem inicial.
-3. Confirmar o conteúdo dos comentários e registrar a revisão/aprovação da SUB-01.
+3. Registrar o assignee adicional no GitHub, caso a equipe adote a Issue como rastreabilidade oficial.
 4. Manter endpoint, autorização e regras de validação como pendências da SUB-02, conforme o escopo.
 
 ## Resultado
 
-A SUB-01 possui objetivo, escopo, critérios de aceite, responsável e dependências documentados, mas **não atende formalmente à Definition of Ready** porque DoR-05 permanece pendente e DoR-07 não foi comprovado.
+A SUB-01 possui objetivo, escopo, critérios de aceite, responsável e revisão registrados. Os conceitos pendentes pertencem ao refinamento autorizado da modelagem e às etapas posteriores de contratos.
 
 ## Autorização
 
-**Início do desenvolvimento: não autorizado nesta etapa.**
+**Status: Authorized / Ready.**
 
-A autorização deverá ser reavaliada após a aprovação do modelo de domínio e a comprovação da revisão humana.
+- **Autorizado por:** `VitorThome15`
+- **Responsáveis registrados:** `marianaveigaa`, `VitorThome15`
+- **Data da autorização:** 22/11/2026
+- **Unidade autorizada:** SUB-01 — Refinar domínio de avaliação e histórico
+- **Escopo autorizado:** modelagem de AvaliacaoFisica, HistoricoFisico e vínculo com Aluno, sem implementar métricas, autorização, API ou persistência nesta etapa.
+
+O início da execução da SUB-01 está autorizado nesta etapa.
