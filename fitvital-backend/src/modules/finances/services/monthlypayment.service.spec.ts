@@ -55,6 +55,29 @@ describe('MonthlyPaymentService', () => {
     expect(repository.save).not.toHaveBeenCalled();
   });
 
+  it('does not reprocess a payment that is already paid', async () => {
+    const stored = payment();
+    stored.status = MonthlyPaymentStatus.PAID;
+    const originalPaymentDate = new Date('2026-11-10T12:30:00.000Z');
+    stored.datePayment = originalPaymentDate;
+    stored.updatedAt = originalPaymentDate;
+
+    const repository: MonthlyPaymentRepository = {
+      findById: vi.fn().mockResolvedValue(stored),
+      findBySchedulingId: vi.fn(),
+      save: vi.fn().mockImplementation(async (value) => value),
+    };
+
+    const result = await new MonthlyPaymentService(repository).processPayment(
+      stored.monthlyPaymentId,
+      PaymentGatewayStatus.PAID,
+    );
+
+    expect(result.status).toBe(MonthlyPaymentStatus.PAID);
+    expect(stored.datePayment).toBe(originalPaymentDate);
+    expect(repository.save).not.toHaveBeenCalled();
+  });
+
   it('rejects an unknown monthly payment', async () => {
     const repository: MonthlyPaymentRepository = {
       findById: vi.fn().mockResolvedValue(null),

@@ -20,7 +20,10 @@ export class MonthlyPaymentService {
       throw new NotFoundException(`Monthly payment ${monthlyPaymentId} not found`);
     }
 
-    if (gatewayStatus === PaymentGatewayStatus.PAID) {
+    if (
+      gatewayStatus === PaymentGatewayStatus.PAID &&
+      payment.status !== MonthlyPaymentStatus.PAID
+    ) {
       payment.processPayment();
       await this.repository.save(payment);
     }
