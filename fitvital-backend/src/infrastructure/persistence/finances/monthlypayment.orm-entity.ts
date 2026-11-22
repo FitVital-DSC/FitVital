@@ -2,14 +2,14 @@ import {
   Column,
   CreateDateColumn,
   Entity,
-  PrimaryGeneratedColumn,
+  PrimaryColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { MonthlyPaymentStatus } from '../../../common/enum/monthlyPayment-status.enum.js';
 
 @Entity({ name: 'monthly_payment', schema: 'finances' })
 export class MonthlyPaymentOrmEntity {
-  @PrimaryGeneratedColumn('uuid')
+  @PrimaryColumn({ type: 'uuid' })
   monthlyPaymentId: string;
 
   @Column({ type: 'uuid' })

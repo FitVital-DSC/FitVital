@@ -16,6 +16,24 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+  postgres-test:
+    image: postgres:17
+    container_name: fitvital-postgres-test
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: fitvital_test
+      POSTGRES_PASSWORD: fitvital_test_password
+      POSTGRES_DB: fitvital_test
+    ports:
+      - "5434:5432"
+    volumes:
+      - fitvital_postgres_test_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fitvital_test -d fitvital_test"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
 
 volumes:
   fitvital_postgres_data:
+  fitvital_postgres_test_data:
