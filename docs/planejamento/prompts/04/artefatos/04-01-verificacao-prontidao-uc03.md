@@ -7,18 +7,21 @@
 - **Issue principal (Epic):** [#30 — UC03: Processar Pagamento de Mensalidade](https://github.com/FitVital-DSC/FitVital/issues/30)
 - **Sub-Issue avaliada:** [#31 — SUB-01: Refinar domínio de Mensalidade](https://github.com/FitVital-DSC/FitVital/issues/31)
 - **Labels registradas:** `feature`, `domain`
-- **Estado real observado:** `closed`
-- **Responsável registrado:** nenhum assignee
+- **Estado real observado:** `open`
+- **Responsável registrado:** `VitorThome15`
+- **Responsável técnico da Issue no GitHub:** ainda não atribuído como assignee
 
 ## Evidências analisadas
 
 - A Issue #31 está vinculada ao Epic #30.
 - O objetivo, escopo e critérios de aceite da transição de pagamento estão descritos na Issue #31.
 - A Issue #31 declara no corpo que não possui dependências e está em `Ready`.
-- A API do GitHub informa a Issue #31 como fechada, com `state_reason: completed`.
-- A API do GitHub informa quatro itens bloqueados pela Issue #31, em divergência com o corpo que declara ausência de dependências.
-- A Issue #31 possui um comentário, mas o conteúdo da revisão não foi apresentado nesta evidência.
+- A Issue #31 está aberta com `state_reason: reopened`.
+- A Issue #31 foi reaberta em 22/11/2026 e está agora em estado `open`.
+- A API do GitHub registra dependentes posteriores à Issue #31. Isso significa que a SUB-01 bloqueia as próximas unidades, não que a Issue #31 tenha dependências anteriores; o corpo está correto ao declarar ausência de dependências.
+- A Issue #31 possui um comentário de revisão técnica que valida a transição para `PAID`, o registro de `datePayment` e o comportamento idempotente.
 - A Issue #31 não possui assignee e não possui a label `uc03-pagamento`, embora essa label esteja prevista no planejamento local.
+- `VitorThome15` declarou assumir responsabilidade pela parte avaliada e concedeu a autorização desta etapa.
 
 ## Matriz DoR
 
@@ -27,25 +30,29 @@
 | DoR-01 | Objetivo claramente definido | **Atende** | A SUB-01 define o encapsulamento da transição de pagamento da Mensalidade. |
 | DoR-02 | Escopo delimitado | **Atende** | O escopo cobre `processPayment`, `status`, `datePayment` e `updatedAt`, sem dependência de ORM. |
 | DoR-03 | Critérios de aceite verificáveis | **Atende** | Existem critérios para `PAID`, data de processamento e independência do Controller. |
-| DoR-04 | Dependências identificadas | **Pendente de ajuste** | O corpo declara nenhuma dependência, mas a API registra quatro itens bloqueados pela Issue; essa divergência precisa ser resolvida. |
+| DoR-04 | Dependências identificadas | **Atende** | A Issue não possui dependências anteriores. Os itens posteriores são dependentes dela e permanecem bloqueados até sua conclusão. |
 | DoR-05 | Informações técnicas disponíveis | **Atende** | O comportamento de domínio, os atributos envolvidos e a independência de ORM estão documentados e existem referências técnicas no planejamento. |
-| DoR-06 | Responsável definido | **Não atende** | A Issue #31 não possui assignee. |
-| DoR-07 | Revisão de planejamento concluída | **Pendente de comprovação** | Há um comentário registrado, mas seu conteúdo não foi fornecido; não é possível confirmar aprovação humana somente pelo contador de comentários. |
+| DoR-06 | Responsável definido | **Atende pela autorização registrada** | `VitorThome15` assumiu formalmente a responsabilidade pela SUB-01 nesta etapa. |
+| DoR-07 | Revisão de planejamento concluída | **Atende pela autorização registrada** | `VitorThome15` concluiu a revisão e concedeu a aprovação explícita desta etapa. |
 
-## Inconsistências e pendências para autorização
+## Pendências operacionais
 
-1. Reabrir ou substituir a Issue #31 caso o trabalho ainda precise ser executado; a Issue está fechada.
-2. Definir e registrar o responsável pela SUB-01.
-3. Investigar os quatro itens registrados como bloqueados pela Issue e alinhar essa informação com a declaração de “nenhuma dependência”.
-4. Confirmar o conteúdo do comentário e registrar explicitamente a revisão/aprovação.
-5. Avaliar a aplicação da label `uc03-pagamento`, prevista no planejamento local.
+1. Registrar `VitorThome15` como assignee da Issue #31 no GitHub.
+2. Aplicar a label `uc03-pagamento` à Issue #31.
 
 ## Resultado
 
-A SUB-01 possui objetivo, escopo e critérios de aceite, mas **não atende formalmente à Definition of Ready**. DoR-04 está inconsistente, DoR-06 não atende e DoR-07 depende da comprovação do comentário de revisão. Além disso, a Issue está fechada.
+A SUB-01 possui objetivo, escopo, critérios de aceite, dependências, revisão e responsável registrados. Restam apenas a atribuição e a label no GitHub como ajustes operacionais.
 
 ## Autorização
 
-**Início do desenvolvimento: não autorizado nesta etapa.**
+**Status: Authorized / Ready.**
 
-A autorização deverá ser reavaliada após a correção do estado da Issue, a definição do responsável, a resolução das dependências e a comprovação da revisão humana.
+- **Autorizado por:** `VitorThome15`
+- **Responsável declarado:** `VitorThome15`
+- **Data da revisão/autorização condicionada:** 22/11/2026
+- **Unidade:** SUB-01 — Refinar domínio de Mensalidade
+- **Estado atual:** a Issue #31 está aberta e pronta para execução.
+- **Escopo autorizado:** modelagem da transição de pagamento da Mensalidade, sem implementar Controller ou dependências de ORM nesta etapa.
+
+O início da execução da SUB-01 está autorizado nesta etapa. Os ajustes operacionais de assignee e label devem ser aplicados no GitHub sem alterar o estado Ready.

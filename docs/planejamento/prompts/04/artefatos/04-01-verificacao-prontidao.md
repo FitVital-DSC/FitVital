@@ -13,7 +13,8 @@
 
 - A branch principal local está em `main` e alinhada com `origin/main`.
 - A Issue #1 está aberta e descreve o UC01, suas regras RN01–RN04 e critérios de aceitação.
-- A Issue #1 possui `marianaveigaa` como responsável, conforme evidência visual enviada.
+- A Issue #1 possui `marianaveigaa` e `VitorThome15` como responsáveis, conforme evidência visual enviada.
+- `VitorThome15` declarou assumir responsabilidade pela parte avaliada e concedeu a autorização de início.
 - A Issue #1 não possui labels, milestone ou Sub-Issues registradas.
 - A SUB-01 está descrita no planejamento local como sem dependências e com estado `Ready`.
 - O arquivo não rastreado `docs/prompts/05-do-teste-red-a-implementacao-green-com-tdd.md` foi mantido fora do escopo.
@@ -26,23 +27,27 @@
 | DoR-02 | Escopo delimitado | **Atende** | A SUB-01 inclui domínio, objetos de valor, invariantes e erros; controller, banco e integrações estão fora do escopo. |
 | DoR-03 | Critérios de aceite verificáveis | **Atende** | Existem critérios para imutabilidade do horário, proteção de transições, validação de parâmetros e independência de ORM. |
 | DoR-04 | Dependências identificadas | **Atende** | A SUB-01 não possui dependências; as dependências posteriores estão registradas nas Sub-Issues seguintes. |
-| DoR-05 | Informações técnicas disponíveis | **Pendente de ajuste** | O domínio e as regras estão documentados, mas `Horario`, os estados completos e os contratos ainda precisam ser confirmados no código e no planejamento técnico. |
-| DoR-06 | Responsável definido | **Atende** | `marianaveigaa` está atribuída à Issue #1; a atribuição específica da SUB-01 ainda deve ser mantida na rastreabilidade local. |
-| DoR-07 | Revisão de planejamento concluída | **Não atende** | Não foi apresentada evidência de revisão humana aprovada especificamente para a SUB-01. |
+| DoR-05 | Informações técnicas disponíveis | **Atende para a fase atual** | O domínio e as regras necessárias à modelagem estão documentados. Detalhes adicionais podem ser refinados dentro do escopo autorizado. |
+| DoR-06 | Responsável definido | **Atende** | `marianaveigaa` e `VitorThome15` aparecem como responsáveis da Issue #1; `VitorThome15` assumiu formalmente a responsabilidade pela SUB-01 nesta autorização. |
+| DoR-07 | Revisão de planejamento concluída | **Atende** | A revisão foi concluída por `VitorThome15`, que concedeu a aprovação explicitamente nesta etapa. |
 
 ## Pendências para autorização
 
-1. Confirmar se a atribuição de `marianaveigaa` à Issue #1 também representa a responsabilidade pela SUB-01.
-2. Confirmar os detalhes técnicos pendentes do domínio, especialmente `Horario` e os estados do agendamento.
-3. Registrar a revisão do planejamento e a aprovação da SUB-01.
-4. Criar e vincular as Sub-Issues no GitHub, caso a equipe adote a decomposição local como rastreabilidade oficial.
+1. Refinar os detalhes técnicos de `Horario`, estados e transições durante a execução da SUB-01.
+2. Criar e vincular as Sub-Issues no GitHub, caso a equipe adote a decomposição local como rastreabilidade oficial.
 
 ## Resultado
 
-A SUB-01 possui objetivo, escopo, critérios de aceite e dependências suficientemente descritos, mas **não atende formalmente à Definition of Ready** porque os critérios DoR-05 e DoR-07 permanecem pendentes ou não atendidos.
+A SUB-01 possui objetivo, escopo, critérios de aceite, responsável e revisão registrados e atende aos critérios essenciais da Definition of Ready para início desta etapa.
 
 ## Autorização
 
-**Início do desenvolvimento: não autorizado nesta etapa.**
+**Status: Authorized / Ready.**
 
-A autorização deverá ser reavaliada após a definição do responsável, a resolução das pendências técnicas e o registro da revisão de planejamento.
+- **Autorizado por:** `VitorThome15`
+- **Responsáveis registrados:** `marianaveigaa`, `VitorThome15`
+- **Data da autorização:** 22/11/2026
+- **Unidade autorizada:** SUB-01 — Refinar domínio de agendamento
+- **Escopo autorizado:** modelagem do domínio sem implementar controller, banco ou integrações nesta etapa.
+
+O início da execução da SUB-01 está autorizado nesta etapa.
