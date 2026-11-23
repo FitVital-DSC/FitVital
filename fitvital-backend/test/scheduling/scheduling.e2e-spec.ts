@@ -6,10 +6,11 @@ import { getRepositoryToken } from '@nestjs/typeorm';
 import { SchedulingEntity } from '../../src/infrastructure/persistence/scheduling/scheduling.orm-entity.js'; // Ajustado com ../../
 import { randomUUID } from 'crypto';
 import { SchedulingStatus } from '../../src/common/enum/scheduling-status.enum.js'; // Ajustado com ../../
+import { Repository } from 'typeorm';
 
 describe('SchedulingController (E2E)', () => {
   let app: INestApplication;
-  let repository: any;
+  let repository: Repository<SchedulingEntity>;
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({

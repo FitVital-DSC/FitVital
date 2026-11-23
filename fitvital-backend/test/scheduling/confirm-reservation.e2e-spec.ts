@@ -10,7 +10,7 @@ import { SchedulingStatus } from '../../src/common/enum/scheduling-status.enum.j
 import { MonthlyPaymentStatus } from '../../src/common/enum/monthlyPayment-status.enum.js';
 import { SchedulingEntity } from '../../src/infrastructure/persistence/scheduling/scheduling.orm-entity.js';
 
-// UC01 - POST /scheduling/:id/confirm-reservation
+// UC01 - POST /schedulings/confirm
 
 describe('POST /scheduling/:id/confirm-reservation (e2e)', async () => {
     let app: INestApplication<App>;
@@ -40,19 +40,20 @@ describe('POST /scheduling/:id/confirm-reservation (e2e)', async () => {
         const scheduling = await schedulingRepository.save(
             schedulingRepository.create({
                 schedulingId: randomUUID(),
+                clientId: randomUUID(),
                 status: SchedulingStatus.PENDING,
             }),
         );
         createdSchedulingIds.push(scheduling.schedulingId);
 
         const response = await request(app.getHttpServer())
-            .post(`/scheduling/${scheduling.schedulingId}/confirm`)
+            .post('/schedulings/confirm')
+            .send({ schedulingId: scheduling.schedulingId })
             .expect(200);
 
         expect(response.body).toEqual({
             schedulingId: scheduling.schedulingId,
-            status: SchedulingStatus.CONFIRMED,
-            message: 'Reservation confirmed successfully.',
+            message: 'Scheduling confirmed successfully',
         });
 
         const persisted = await schedulingRepository.findOneByOrFail({
