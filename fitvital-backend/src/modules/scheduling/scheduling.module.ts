@@ -7,7 +7,6 @@ import { TypeOrmSchedulingRepository } from '../../infrastructure/persistence/sc
 import { SchedulingMapper } from '../../infrastructure/persistence/scheduling/scheduling.orm-mapper.js'; 
 import { SchedulingController } from './controllers/scheduling.controller.js';
 import { FinancesModule } from '../finances/finances.module.js';
-import { MONTHLYPAYMENT_REPOSITORY } from '../finances/repositories/monthlypayment.repository.interface.js';
 
 @Module({
   imports: [
@@ -22,12 +21,6 @@ import { MONTHLYPAYMENT_REPOSITORY } from '../finances/repositories/monthlypayme
     {
       provide: SCHEDULING_REPOSITORY,
       useExisting: TypeOrmSchedulingRepository, 
-    },
-    {
-      provide: MONTHLYPAYMENT_REPOSITORY,
-      useValue: {
-        findBySchedulingId: async () => ({ status: 'PAID' }),
-      },
     },
   ],
   exports: [SchedulingService],

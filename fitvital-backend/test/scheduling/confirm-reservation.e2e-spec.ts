@@ -7,14 +7,16 @@ import { App } from 'supertest/types.js';
 import { Repository } from 'typeorm';
 import { AppModule } from '../../src/app.module.js';
 import { SchedulingStatus } from '../../src/common/enum/scheduling-status.enum.js';
-import { MonthlyPaymentStatus } from '../../src/common/enum/monthlyPayment-status.enum.js';
 import { SchedulingEntity } from '../../src/infrastructure/persistence/scheduling/scheduling.orm-entity.js';
+import { MonthlyPaymentOrmEntity } from '../../src/infrastructure/persistence/finances/monthlypayment.orm-entity.js';
+import { MonthlyPaymentStatus } from '../../src/common/enum/monthlyPayment-status.enum.js';
 
 // UC01 - POST /schedulings/confirm
 
 describe('POST /scheduling/:id/confirm-reservation (e2e)', async () => {
     let app: INestApplication<App>;
     let schedulingRepository: Repository<SchedulingEntity>;
+    let monthlyPaymentRepository: Repository<MonthlyPaymentOrmEntity>;
 
     const createdSchedulingIds: string[] = [];
 
@@ -27,6 +29,7 @@ describe('POST /scheduling/:id/confirm-reservation (e2e)', async () => {
         await app.init();
 
         schedulingRepository = app.get(getRepositoryToken(SchedulingEntity));
+        monthlyPaymentRepository = app.get(getRepositoryToken(MonthlyPaymentOrmEntity));
     });
 
     afterAll(async () => {
@@ -45,6 +48,16 @@ describe('POST /scheduling/:id/confirm-reservation (e2e)', async () => {
             }),
         );
         createdSchedulingIds.push(scheduling.schedulingId);
+
+        await monthlyPaymentRepository.save({
+            monthlyPaymentId: randomUUID(),
+            clientId: scheduling.schedulingId,
+            status: MonthlyPaymentStatus.PAID,
+            value: 100,
+            datePayment: new Date(),
+            createdAt: new Date(),
+            updatedAt: new Date(),
+        });
 
         const response = await request(app.getHttpServer())
             .post('/schedulings/confirm')
