@@ -1,0 +1,4 @@
+@baseUrl = http://localhost:3000
+
+### UC08 listar agendamentos -> esperado: 200 OK
+GET {{baseUrl}}/schedulings

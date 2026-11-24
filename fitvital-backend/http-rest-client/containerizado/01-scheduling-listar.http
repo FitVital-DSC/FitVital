@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:3000
+@validBearerToken =
+@missingClientIdBearerToken =
+
+### UC08 listagem valida -> esperado: 200 OK
+# @name listarAgendamentos
+GET {{baseUrl}}/schedulings
+Authorization: Bearer {{validBearerToken}}
+
+### UC08 sem autenticacao -> esperado: 401 Unauthorized
+GET {{baseUrl}}/schedulings
+
+### UC08 JWT sem clientId -> esperado: 403 Forbidden
+GET {{baseUrl}}/schedulings
+Authorization: Bearer {{missingClientIdBearerToken}}
+
+### UC08 rota inexistente -> esperado: 404 Not Found
+GET {{baseUrl}}/schedulings/rota-inexistente
+Authorization: Bearer {{validBearerToken}}

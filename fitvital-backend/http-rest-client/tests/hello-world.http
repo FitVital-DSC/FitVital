@@ -1,0 +1,4 @@
+@baseUrl = http://localhost:3000
+
+### Sanidade da API -> esperado: 200 OK
+GET {{baseUrl}}/
