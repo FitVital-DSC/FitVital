@@ -3,6 +3,7 @@ import { SCHEDULING_REPOSITORY } from '../repositories/scheduling.repository.int
 import type { MonthlyPaymentRepository } from '../../finances/repositories/monthlypayment.repository.interface.js';
 import { MONTHLYPAYMENT_REPOSITORY } from '../../finances/repositories/monthlypayment.repository.interface.js';
 import type { SchedulesRepository } from '../repositories/scheduling.repository.interface.js';
+import type { Scheduling } from '../entities/scheduling.entity.js';
 
 export class SchedulingNotFoundException extends Error {
   constructor(schedulingId: string) {
@@ -40,5 +41,9 @@ export class SchedulingService {
 
     scheduling.confirm(monthlyPayment.status);
     await this.schedulingRepository.save(scheduling);
+  }
+
+  async listByClientId(clientId: string): Promise<Scheduling[]> {
+    return this.schedulingRepository.findByClientId(clientId);
   }
 }

@@ -7,6 +7,7 @@ import { TypeOrmSchedulingRepository } from '../../infrastructure/persistence/sc
 import { SchedulingMapper } from '../../infrastructure/persistence/scheduling/scheduling.orm-mapper.js'; 
 import { SchedulingController } from './controllers/scheduling.controller.js';
 import { FinancesModule } from '../finances/finances.module.js';
+import { JwtClientGuard } from './guards/jwt-client.guard.js';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { FinancesModule } from '../finances/finances.module.js';
   providers: [
     SchedulingService,
     SchedulingMapper, 
+    JwtClientGuard,
     TypeOrmSchedulingRepository,
     {
       provide: SCHEDULING_REPOSITORY,

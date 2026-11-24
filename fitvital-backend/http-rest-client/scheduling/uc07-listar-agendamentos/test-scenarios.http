@@ -1,0 +1,30 @@
+@baseUrl = http://localhost:3000
+@validBearerToken = substitua-por-jwt-valido-com-claim-clientId
+@missingClientIdBearerToken = substitua-por-jwt-sem-claim-clientId
+
+### CA01 - listagem padrão com registros -> esperado: 200 OK
+GET {{baseUrl}}/schedulings
+Authorization: Bearer {{validBearerToken}}
+
+### CA02 - isolamento por clientId -> esperado: 200 OK contendo somente registros do aluno
+GET {{baseUrl}}/schedulings
+Authorization: Bearer {{validBearerToken}}
+
+### CA03 - aluno sem agendamentos -> esperado: 404 Not Found
+GET {{baseUrl}}/schedulings
+Authorization: Bearer {{validBearerToken}}
+
+### CA07 - autenticação ausente -> esperado: 401 Unauthorized
+GET {{baseUrl}}/schedulings
+
+### CA08 - token sem claim clientId -> esperado: 403 Forbidden
+GET {{baseUrl}}/schedulings
+Authorization: Bearer {{missingClientIdBearerToken}}
+
+### CA04 - persistência indisponível -> esperado: 503 Service Unavailable
+GET {{baseUrl}}/schedulings
+Authorization: Bearer {{validBearerToken}}
+
+### Regressão - rota inexistente -> esperado: 404 Not Found
+GET {{baseUrl}}/schedulings/rota-inexistente
+Authorization: Bearer {{validBearerToken}}

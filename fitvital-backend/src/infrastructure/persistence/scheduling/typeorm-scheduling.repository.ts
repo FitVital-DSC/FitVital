@@ -23,6 +23,13 @@ export class TypeOrmSchedulingRepository implements SchedulesRepository {
         return SchedulingMapper.toDomain(entity);
     }
 
+    async findByClientId(clientId: string): Promise<Scheduling[]> {
+        const entities = await this.repository.find({
+            where: { clientId },
+        });
+        return entities.map((entity) => SchedulingMapper.toDomain(entity));
+    }
+
     async save(scheduling: Scheduling): Promise<Scheduling> {
         const entity = SchedulingMapper.toPersistence(scheduling);
         const savedEntity = await this.repository.save(entity);

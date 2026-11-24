@@ -1,0 +1,9 @@
+@baseUrl = http://localhost:3000
+@bearerToken = substitua-por-jwt-com-claim-clientId
+
+### CA01, RF01-RF03 -> esperado: 200 OK com agendamentos do aluno
+GET {{baseUrl}}/schedulings
+Authorization: Bearer {{bearerToken}}
+
+### CA07, FE02 -> esperado: 401 Unauthorized sem token
+GET {{baseUrl}}/schedulings

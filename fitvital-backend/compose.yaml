@@ -49,6 +49,7 @@ services:
       DB_USERNAME: fitvital_user
       DB_PASSWORD: fitvital_dev_password
       DB_NAME: fitvital_db
+      JWT_SECRET: ${JWT_SECRET:-fitvital-dev-change-me}
       PORT: 3000
     ports:
       - "3000:3000"
