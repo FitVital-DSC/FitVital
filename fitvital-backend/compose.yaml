@@ -17,5 +17,45 @@ services:
       timeout: 5s
       retries: 10
 
+  postgres_test:
+    image: postgres:17
+    container_name: fitvital-postgres-test
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${TEST_DB_USERNAME:-fitvital_test_user}
+      POSTGRES_PASSWORD: ${TEST_DB_PASSWORD:-fitvital_test_password}
+      POSTGRES_DB: ${TEST_DB_NAME:-fitvital_test_db}
+    ports:
+      - "${TEST_DB_PORT:-5434}:5432"
+    volumes:
+      - fitvital_postgres_test_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: fitvital-api:dev
+    container_name: fitvital-api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USERNAME: fitvital_user
+      DB_PASSWORD: fitvital_dev_password
+      DB_NAME: fitvital_db
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+
 volumes:
   fitvital_postgres_data:
+  fitvital_postgres_test_data:

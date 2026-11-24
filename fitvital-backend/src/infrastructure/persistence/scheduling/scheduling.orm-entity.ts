@@ -1,9 +1,9 @@
-import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
+import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn } from "typeorm";
 import { SchedulingStatus } from "../../../common/enum/scheduling-status.enum.js";
 
 @Entity({ name: 'scheduling', schema: 'scheduling' })
 export class SchedulingEntity {
-    @PrimaryGeneratedColumn('uuid')
+    @PrimaryColumn('uuid')
     schedulingId: string;
 
     @Column({ type: 'uuid' })
