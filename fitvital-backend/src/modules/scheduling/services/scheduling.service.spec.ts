@@ -12,6 +12,7 @@ describe('SchedulingService', () => {
     let schedulingRepository: {
         findById: ReturnType<typeof vi.fn>;
         save: ReturnType<typeof vi.fn>;
+        findByClientId: ReturnType<typeof vi.fn>;
     };
     let monthlyPaymentRepository: {
         findBySchedulingId: ReturnType<typeof vi.fn>;
@@ -21,6 +22,7 @@ describe('SchedulingService', () => {
         const schedulingRepositoryMock = {
             findById: vi.fn(),
             save: vi.fn(),
+            findByClientId: vi.fn(),
         };
         const monthlyPaymentRepositoryMock = {
             findBySchedulingId: vi.fn(),
@@ -60,5 +62,13 @@ describe('SchedulingService', () => {
         await expect(
             service.confirmReservation('scheduling-1'),
         ).rejects.toThrow(Error);
+    });
+
+    it('should list only schedulings for the authenticated client', async () => {
+        const schedulings = [{ schedulingId: 'scheduling-1' }];
+        schedulingRepository.findByClientId.mockResolvedValueOnce(schedulings);
+
+        await expect(service.listByClientId('client-1')).resolves.toEqual(schedulings);
+        expect(schedulingRepository.findByClientId).toHaveBeenCalledWith('client-1');
     });
 });

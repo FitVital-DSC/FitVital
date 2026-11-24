@@ -9,6 +9,16 @@ import { SchedulingStatus } from '../../src/common/enum/scheduling-status.enum.j
 import { Repository } from 'typeorm';
 import { MonthlyPaymentOrmEntity } from '../../src/infrastructure/persistence/finances/monthlypayment.orm-entity.js';
 import { MonthlyPaymentStatus } from '../../src/common/enum/monthlyPayment-status.enum.js';
+import { createHmac } from 'node:crypto';
+
+function createTestJwt(payload: Record<string, unknown>, secret = 'test-jwt-secret'): string {
+  const header = Buffer.from(JSON.stringify({ alg: 'HS256', typ: 'JWT' })).toString('base64url');
+  const body = Buffer.from(JSON.stringify(payload)).toString('base64url');
+  const signature = createHmac('sha256', secret)
+    .update(`${header}.${body}`)
+    .digest('base64url');
+  return `${header}.${body}.${signature}`;
+}
 
 describe('SchedulingController (E2E)', () => {
   let app: INestApplication;
@@ -18,6 +28,7 @@ describe('SchedulingController (E2E)', () => {
   const createdMonthlyPaymentIds: string[] = [];
 
   beforeAll(async () => {
+    process.env.JWT_SECRET = 'test-jwt-secret';
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule], 
     }).compile();
@@ -125,6 +136,65 @@ describe('SchedulingController (E2E)', () => {
         .post('/schedulings/confirm')
         .send({ schedulingId: randomUUID() })
         .expect(500); 
+    });
+  });
+
+  describe('GET /schedulings', () => {
+    it('retorna somente os agendamentos do clientId autenticado', async () => {
+      const clientId = randomUUID();
+      const otherClientId = randomUUID();
+      const ownScheduling = await repository.save({
+        schedulingId: randomUUID(),
+        clientId,
+        status: SchedulingStatus.PENDING,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+      const otherScheduling = await repository.save({
+        schedulingId: randomUUID(),
+        clientId: otherClientId,
+        status: SchedulingStatus.PENDING,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      });
+      createdSchedulingIds.push(ownScheduling.schedulingId, otherScheduling.schedulingId);
+
+      const token = createTestJwt({ clientId, exp: 4102444800 });
+      const response = await request(app.getHttpServer())
+        .get('/schedulings')
+        .set('Authorization', `Bearer ${token}`)
+        .expect(200);
+
+      expect(response.body).toHaveLength(1);
+      expect(response.body[0]).toEqual({
+        schedulingId: ownScheduling.schedulingId,
+        status: SchedulingStatus.PENDING,
+        createdAt: ownScheduling.createdAt.toISOString(),
+        updatedAt: ownScheduling.updatedAt.toISOString(),
+      });
+      expect(response.body[0]).not.toHaveProperty('clientId');
+    });
+
+    it('retorna 404 quando o aluno nao possui agendamentos', async () => {
+      const token = createTestJwt({ clientId: randomUUID(), exp: 4102444800 });
+      await request(app.getHttpServer())
+        .get('/schedulings')
+        .set('Authorization', `Bearer ${token}`)
+        .expect(404);
+    });
+
+    it('retorna 401 sem token', async () => {
+      await request(app.getHttpServer())
+        .get('/schedulings')
+        .expect(401);
+    });
+
+    it('retorna 403 sem clientId no token', async () => {
+      const token = createTestJwt({ sub: 'student-1', exp: 4102444800 });
+      await request(app.getHttpServer())
+        .get('/schedulings')
+        .set('Authorization', `Bearer ${token}`)
+        .expect(403);
     });
   });
 });
